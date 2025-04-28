@@ -1,0 +1,25 @@
+================
+Questão 1
+================
+
+CREATE OR REPLACE PROCEDURE atualiza_deleted_on(p_id IN PESSOA.ID%TYPE) IS
+BEGIN
+    UPDATE PESSOA
+    SET DELETED_ON = SYSDATE
+    WHERE ID = p_id
+      AND STATUS = 'INATIVO';
+    COMMIT;
+END;
+
+================
+Questão 2
+================
+
+D) QUIM
+
+================
+Questão 3
+================
+
+A trigger faz o registro de um log na tabela pessoa_log a cada nova inserção ou atualização de uma pessoa,
+esse registro contém a data da criação e atualização.
